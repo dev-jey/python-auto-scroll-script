@@ -18,7 +18,7 @@ def run_gui():
 
 
 while True:
-    for i in range(1, 10):
+    for i in range(1, random.randint(10, 30)):
         run_gui()
         sleep(3)
     pyautogui.scroll(random.randint(100, 200))
