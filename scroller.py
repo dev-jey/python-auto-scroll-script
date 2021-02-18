@@ -1,14 +1,24 @@
 import pyautogui
+import random
 from time import sleep
 
 print(">>>>>>>>>>>>>>>>> Working >>>>>>>>>>>>>>>")
 
+hot_keys = ['ctrl', 'shift', 'esc']
+
 
 def run_gui():
-    pyautogui.moveTo(100, 150)
+    pyautogui.moveTo(600, random.randint(300, 500))
     pyautogui.moveRel(0, 10)
+    pyautogui.keyDown(random.choice(hot_keys))
+    pyautogui.keyUp(random.choice(hot_keys))
+    screen_size = pyautogui.size()
+    current_screen_position = pyautogui.position()
+    pyautogui.scroll(-1)
 
 
 while True:
-    run_gui()
-    sleep(3)
+    for i in range(1, 10):
+        run_gui()
+        sleep(3)
+    pyautogui.scroll(random.randint(100, 200))
